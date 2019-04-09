@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>如何写出优雅的代码</title>
+	<link rel="stylesheet" type="text/css" href="resources/amazeui.min.css">
+	<style>
+		.main{
+			margin: auto;
+			width: 1200px;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<h1 style="text-align: center; margin: 30px 50px 10px 50px;"># 如何写出优雅的代码 #</h1>
+		<h3 style="color: #cc3a3a; text-align: right;">——— 代码是给人看的，机器只是去偶尔执行它 ##</h3>
+		<hr />
+		<h2>## 结论写前面</h2>
+		<img src="resources/4.PNG">
+		<br/ >
+		<br/ >
+		<img src="resources/5.PNG">
+		<br/ >
+		<br/ >
+		<div style="text-align: center">
+			<img src="resources/3.PNG">
+		</div>
+		<h2>## 代码应当易于理解</h2>
+		<p>
+			<q> 代码是写给自己和别人看的：对于同一个功能实现有很多种方法，不管怎么写代码，代码最终都会编译成二进制，程序都会正常运行；但是有一点我们应该时刻记着。代码应该保持清晰的结构，这样对于后期的维护代码很大的便捷性。假如有一天回头要修改代码，你会感谢你自己</q>
+			<h3>### 建立良好的命名规范</h3>
+			<p>
+				<h4><mark>1. 约定俗成的命名方式（可以是项目为单位，可以是公司为单位）</mark></h4>
+				<ul>
+					<li>$$ 开头的变量都是ACTION事件</li>
+					<li>__ 开头的变量都是全局状态</li>
+					<li>全大写的变量都是常量</li>
+					<li>services 结尾的都是服务</li>
+					<li>config 结尾的都是配置</li>
+				</ul>
+				<h4><mark>2. 把信息封装到变量名称中</mark></h4>
+				<ul>
+					<li>布尔值的用is/has开头</li>
+					<li>用min和max来表示（包含）极限：[min, max] 闭区间。</li>
+					<li>用first和last来表示包含的范围: [first, last] 闭区间 或 [first, last) 半闭半开区间。</li>
+					<li>对于一些需要特别说明的东西，在变量名的后面用下划线附带一些更多的信息。例如单位等等。形如”变量名_附加信息；“有目的的使用大小写和下划线等（即利用名字的格式来传递含义）</li>
+					<li>名称不应该是直译过来的表面意思</li>
+					<li>方法名称尽量使用动词开头</li>
+				</ul>
+				<h4><mark>3. 不要尝试下面的骚操作</mark></h4>
+				<img src="resources/8.PNG">
+				<h4>正确的示范：</h4>
+				<img src="resources/1.PNG"><br/><br/>
+				<h4>错误的示范：</h4>
+				<img src="resources/6.PNG"><br/><br/>
+				<img src="resources/7.PNG"><br/><br/>
+			</p>
+			<h3>### 该写什么样的注释</h3>
+			<p>
+				<q>好代码>坏代码+好注释 —— 不要写一堆注释去辩解屎一样的代码</q><br/>
+				<q>注释的目的是尽量帮助读者了解得和作者一样多</q><br />
+				<h4>什么不需要注释？</h4>
+				<ul>
+					<li>不要为那些从代码本身就能快速推断的事实写注释。</li>
+					<li>不要为了注释而注释。</li>
+					<li>不要给不好的名字加注释——而应该把名字改好。</li>
+				</ul>
+				<h4>那么，什么需要注释？</h4>
+				<ul>
+					<li>记录作者编码时的设计思想</li>
+					<li>记录难以理解的逻辑</li>
+					<li>解释与常规思维不相符的代码</li>
+					<li>公布可能的陷阱</li>
+					<li>另外，总结性注释对代码的阅读者理解整个代码的关联和逻辑是很有帮助的，尽量在每个函数前写注释。</li>
+				</ul>
+				<h4>约定俗成的注释</h4>
+				<img src="resources/9.PNG">
+				<h4>错误的示范：</h4>
+				<img src="resources/10.PNG"><br/><br/>
+				<img src="resources/11.PNG"><br/><br/>
+				<img src="resources/12.PNG"><br/><br/>
+				<img src="resources/13.PNG"><br/><br/>
+				<img src="resources/14.PNG"><br/><br/>
+				<h4>正确的示范：</h4>
+				<img src="resources/15.PNG"><br/><br/>
+				<img src="resources/16.PNG"><br/><br/>
+				<img src="resources/17.PNG"><br/><br/>
+				<h4>sublime 注释插件</h4>
+				<a target="_blank" href="https://github.com/spadgos/sublime-jsdocs">DocBlockr</a><br.><br />
+				<img src="resources/docblockr.gif">
+			</p>
+		</p>
+		<h2>## 能不能灵性一点？</h2>
+		<p>
+			<h3>### 如何避免写出耗油根？</h3>
+			<img src="resources/IMG_7411.jpg">
+			<br /><br />
+			<mark>你以为这是个段子？</mark>
+			<br/><br/>
+			<img src="resources/18.PNG">
+			<h4><mark>让我们把异常情况提前返回，公共逻辑放到判断之外</mark></h4>
+			示例1：<br/>
+			<img src="resources/19.PNG">
+			<br/><br/>
+			修改后：<br/>
+			<img src="resources/20.PNG">
+			<br />
+			<br />
+			示例2：<br/>
+			<img src="resources/23.PNG">
+			<br/><br/>
+			修改后：<br/>
+			<img src="resources/24.PNG">
+			<br />
+			<br />
+			练习1: <br />
+			<img src="resources/21.PNG">
+			<br />
+			<br />
+			练习2: <br />
+			<img src="resources/28.PNG">
+			<br />
+			<br />
+			练习3: <br />
+			<img src="resources/22.PNG">
+			<br />
+			<br />
+			<q>
+				提前返回退出当前逻辑的好处是，代码阅读者无需关注返回前的代码，脑子里无需记住当期实在异常情况中还是正常逻辑中。
+			</q>
+			<h4><mark>尽量避免使用else，更不应该使用else if（ELSE IF 语句是完全可以被更好的写法代替的）</mark></h4>
+			<q>在提前使用return 及时退出当前逻辑的情况下，大多数else 都是无意义的</q>
+			<br />
+			<br />
+			示例1：<br/>
+			<img src="resources/25.PNG">
+			<br />
+			<br />
+			示例2：<br/>
+			<img src="resources/27.PNG">
+			<br />
+			<br />
+			示例3：<br/>
+			<img src="resources/26.PNG">
+			<br />
+			<br />
+			练习1: <br />
+			<img src="resources/29.PNG">
+			<br />
+			<br />
+			练习2: <br />
+			<img src="resources/30.PNG">
+			<br />
+			<br />
+			练习3: <br />
+			<img src="resources/31.PNG">
+			<br />
+			<h4><mark>最小化嵌套</mark></h4>
+			<ul>
+				<li>通过提早返回来减少嵌套；</li>
+				<li>通过 if(....) continue; 减少循环里的嵌套。</li>
+			</ul>
+			<h3>### 为什么不让我用全局变量？</h3>
+			<img src="resources/32.PNG">
+			<br />
+			<br />
+			<img src="resources/33.PNG">
+			<br />
+			<br />
+			<img src="resources/34.PNG">
+			<br />
+			<br />
+			<ul>
+				<li>使用全局变量实际上是增加了模块之间的耦合强度，同时会产生数据有效性问题。</li>
+				<li>重新构建你的数据结构，把公有数据成员抽离出来，单独做成模块，提供一个接口对其操作。</li>
+				<li>全局变量背离了问题局部化的思想，也容易造成副作用，所以使用时应当小心，避免产生难以调试的错误。</li>
+			</ul>
+			<h3>### 让函数单纯一点</h3>
+			<p>
+				百度说：<q>函数的定义：给定一个数集A，假设其中的元素为x。现对A中的元素x施加对应法则f，记作f（x），得到另一数集B。假设B中的元素为y。则y与x之间的等量关系可以用y=f（x）表示。我们把这个关系式就叫函数关系式，简称函数。</q>
+			</p>
+			<img src="resources/36.PNG">
+			<img src="resources/37.PNG">
+			<br/>
+			<br/>
+			<img src="resources/38.PNG">
+			<h2>细了解下为何要坚持这种「相同输入得到相同输出」原则。</h2>
+			<h3>### 可缓存性（Cacheable）</h3>
+			<p>
+				<q>函数仅仅只是输入到输出的映射而已</q><br/>
+				<img src="resources/39.PNG">
+			</p>
+			<h3>>### 可移植性／自文档化（Portable / Self-Documenting）</h3>
+			<img src="resources/40.PNG">
+			<h3>### 可测试性（Testable）</h3>
+			<p>
+				纯函数让测试更加容易。我们不需要伪造一个“真实的”支付网关，或者每一次测试之前都要配置、之后都要断言状态（assert the state）。只需简单地给函数一个输入，然后断言输出就好了。
+			</p>
+			<h3>### 拆分复杂的逻辑到纯函数中，让入口函数去调用组合他们</h3>
+			<q>用面向对象的思维方式，不是一个层面的东西，不要放在一起处理，学会按子逻辑处理问题</q><br/><br/>
+			<img src="resources/41.PNG"><br/><br/>
+			<img src="resources/42.PNG">
+			<h3>### 在主函数中去组合，而不是去纯函数中去调用其他后续逻辑</h3>
+			<img src="resources/43.PNG">
+			<h3>### 对于显而易见逻辑，使用链式调用要好得多</h3>
+			<img src="resources/44.PNG">
+		</p>
+	</div>
+</body>
+</html>

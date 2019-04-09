@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JSON Editor Online - view</title>
+  <meta name="description" content="JSON Editor Online">
+  <meta name="keywords" content="JSON Editor Online">
+  <meta name="author" content="Jos de Jong">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="app.min.css">
+  <script type="text/javascript" src="app.min.js"></script>
+  <script type="text/javascript" src="chromeapp.js"></script>
+</head>
+
+<body>
+
+<div id="header">
+  <a href="javascript::void(0)" class="header">
+    <img alt="JSON Editor Online" title="JSON Editor Online" src="img/logo.png" id="logo">
+  </a>
+
+  <div id="menu">
+    <ul>
+      <li>
+        <a id="new" title="Open a new, empty document">New</a>
+      </li>
+      <li>
+        <a id="open" title="Open file">
+          Open <span class="dropDownIcon">&#x25BC;</span>
+        </a>
+        <ul id="openMenu">
+          <li>
+            <a id="openFromDisk" title="Open file from disk">Open from disk</a>
+          </li>
+          <li>
+            <a id="openUrl" title="Open file from url">Open url</a>
+          </li>
+          <li id="filesList"></li>
+        </ul>
+      </li>
+      <li>
+        <a id="save" title="Save file">
+          Save <span class="dropDownIcon">&#x25BC;</span>
+        </a>
+        <ul id="saveMenu">
+          <li>
+            <a id="saveToDisk" title="Save file to disk">Save to disk</a>
+          </li>
+          <li>
+            <a id="saveOnline" title="Save and share online">Save online</a>
+          </li>
+        </ul>
+      </li>
+      <li class="settings">
+        <a id="settings" title="Settings">
+          Settings <span class="dropDownIcon">&#x25BC;</span>
+        </a>
+        <ul id="settingsMenu">
+          <li>
+            <div class="indentation">
+              <label for="indentation">Indentation <input id="indentation" value="2" /></label>
+            </div>
+          </li>
+          <li id="schemasList"></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="auto">
+  <div id="contents">
+    <div id="codeEditor"></div>
+
+    <div id="splitter">
+      <div id="buttons">
+        <div>
+          <button id="toTree" class="convert" title="Copy code to tree editor (Ctrl + >)">
+            <div class="convert-right"></div>
+          </button>
+        </div>
+        <div>
+          <button id="toCode" class="convert" title="Copy tree to code editor (Ctrl + <)">
+            <div class="convert-left"></div>
+          </button>
+        </div>
+      </div>
+      <div id="drag">
+      </div>
+    </div>
+
+    <div id="treeEditor"></div>
+  </div>
+</div>
+
+<div id="footer">
+  <div id="footer-inner">
+    <a href="http://jsoneditoronline.org" class="footer">JSON Editor Online 4.9.7</a>
+    &bull;
+    <a href="HISTORY.md" target="_blank" class="footer">History</a>
+    &bull;
+    Copyright 2011-2018 Jos de Jong
+  </div>
+</div>
+</body>
+</html>

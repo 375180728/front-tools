@@ -1,0 +1,38 @@
+.tools-containers, .docs-containers{
+  height: 100vh;
+  padding-top: 20px;
+  .contents{
+    width: 1280px;
+    margin: auto;
+    margin-top: 20px;
+    h2{
+      text-align: center;
+      font-weight: 300;
+      font-size: 28px;
+      color: #314659;
+      letter-spacing: 0.6px;
+    }
+    .title-line-wrapper{
+      width: 250px;
+      margin: 10px auto 20px;
+      height: 2px;
+      overflow: hidden;
+      .title-line{
+        -webkit-animation: page1TitleLine 3s ease-in-out 1.5s infinite;
+        animation: page1TitleLine 3s ease-in-out 1.5s infinite;
+        height: 100%;
+        width: 64px;
+        -webkit-transform: translateX(-64px);
+        -ms-transform: translateX(-64px);
+        transform: translateX(-64px);
+        background: -webkit-linear-gradient(left, rgba(24, 144, 255, 0) 0%, #1890ff 100%);
+        background: linear-gradient(to right, rgba(24, 144, 255, 0) 0%, #1890ff 100%);
+      }
+    }
+    .card-content{
+      display: flex;
+      justify-content: left;
+      flex-wrap: wrap;
+    }
+  }
+}

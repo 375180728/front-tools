@@ -1,0 +1,1 @@
+export const DOMAIN = process.env.NODE_ENV === 'dev' ? 'http://127.0.0.1:3001/' : 'http://10.63.166.108:3001/';

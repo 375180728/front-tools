@@ -1,0 +1,147 @@
+.lessonOne-container{
+  .p1,.p2{
+    h3{
+      font-size: 26px;
+      text-align: center;
+      width: 100%;
+      font-weight: 600;
+      transition: all 1s ease 1s;
+      line-height: 100px;
+      color: #f8440f;
+      position: absolute;
+      top: 25px;
+      span{
+        color: #8c8888;
+      }
+    }
+    p.image-1,
+    p.image-2{
+      height: 600px;
+      width: 860px;
+      margin: 100px auto;
+      position: relative;
+    }
+  }
+  div.p1{
+    p.image-1{
+      background: url('../../i/lesson/front-end/L1/01.png') no-repeat center;
+      .step1{
+        top: 35px;
+        .number{
+          left: 20px;
+          top: 10px;
+        }
+      }
+      .step2{
+        top: 20px;
+        left: 265px;
+        .number{
+          left: 100px;
+        }
+      }
+      .step3{
+        right: 85px;
+        top: 10px;
+        .number{
+          right: 20px;
+          top: 55px;
+        }
+      }
+      .step4{
+        top: 225px;
+        right: 46px;
+        .number{
+          left: 122px;
+        }
+      }
+      .step5{
+        top: 225px;
+        right: 320px;
+        .number{
+          left: 20px;
+        }
+      }
+      .step6{
+        top: 235px;
+        left: 34px;
+        .number{
+          top: 20px;
+          left: 20px;
+        }
+      }
+      .step7{
+        top: 437px;
+        left: 62px;
+        width: 337px;
+        height: 180px;
+        .number{
+          top: 20px;
+          right: 20px;
+        }
+      }
+    }
+  }
+  div.p2{
+    p.image-2{
+      height: 600px;
+      width: 860px;
+      margin: 100px auto;
+      position: relative;
+      .pa-2{
+        position: absolute;
+        height: 300px;
+        width: 160px;
+        top: 180px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  } 
+  .steps{
+    width: 220px;
+    height: 200px;
+    position: absolute;
+    .number{
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      font-weight: 600;
+      border-radius: 100%;
+      color: white;
+      background-color: tomato;
+    }
+    &:hover{
+      .number{
+        background-color: yellowgreen;
+        animation: rotate-number 0.5s;
+      }
+    }
+  }
+  .next{
+    text-align: center;
+    font-size: 30px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    cursor: pointer;
+    animation: next-arrow 1.5s infinite ;
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    i{
+      transform: rotate(90deg);
+    }
+  }
+}
+
+@keyframes rotate-number{
+  0%{transform: rotate(0deg)}
+  100%{transform: rotate(360deg)}
+}
+
+@keyframes next-arrow{
+  0%{bottom: 0px}
+  50%{bottom: 20px}
+  100%{bottom: 0px}
+}

@@ -1,0 +1,108 @@
+.auth-containers {
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  min-width: 1000px;
+  align-items: center;
+  .l{
+    background: url('../../i/login/lock-door.svg') no-repeat right;
+    width: 400px;
+    height: 588px;
+  }
+  .r{
+    width: 600px;
+    height: 588px;
+    h2{
+      font-size: 33px;
+      color: rgba(0,0,0,.85);
+      font-family: Avenir,Helvetica Neue,Arial,Helvetica,sans-serif;
+      font-weight: 600;
+      position: relative;
+      text-align: center;
+      line-height: 44px;
+      height: 44px;
+      margin-top: 80px;
+      img{
+        width: 36px;
+        margin-top: -4px;
+        margin-right: 15px;
+      }
+    }
+    .desc{
+      font-size: 14px;
+      color: rgba(0,0,0,.45);
+      margin-top: 12px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .auth-form{
+      max-width: 500px;
+      .input{
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .auth-form-rigister{
+        float: right;
+      }
+      .auth-form-button{
+        width: 100%;
+      }
+    }
+  }
+  
+  .cat{
+    width: 236px;
+    height: 236px;
+    position: fixed;
+    bottom: 0;
+    cursor: pointer;
+    right: -100px;
+    transform: rotate(-50deg);
+    background: url('../../i/login/cat.png');
+    div.hello{
+      opacity: 0;
+      width: 54px;
+      height: 49px;
+      position: absolute;
+      background: url('../../i/login/cat-say.png');
+    }
+    &:hover{
+      animation: cat 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+      div.hello{
+        animation: cat-say-hi 3s forwards;
+      }
+    }
+  }
+  @keyframes cat{
+    0%{
+      right: -100px;
+      transform: rotate(-50deg);
+    }
+    100%{
+      right: -10px;
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes cat-say-hi{
+    0%{
+      bottom: 60px;
+      right: 40px;
+      transform: rotate(-20deg);
+    }
+    60%{
+      bottom: 60px;
+      right: 40px;
+      opacity: 0;
+      transform: rotate(-20deg);
+    }
+    100%{
+      bottom: 10px;
+      right: 60px;
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+}
