@@ -1,0 +1,25 @@
+{
+  "name"             : "front-tools",
+  "cwd"              : "/web/www/front-tools",
+  "script"           : "server.js",
+  "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+  "error_file"       : "/web/logs/front-tools/error_pm2.log",
+  "out_file"         : "/web/logs/front-tools/stdout_pm2.log",
+  "pid_file"         : "/web/www/pids/node-geo-api.pid",
+  "instances"        : 1,
+  "min_uptime"       : "200s",
+  "max_restarts"     : 10,
+  "max_memory_restart": "500M",
+  "cron_restart"     : "1 0 * * *",
+  "watch"            : false,
+  "ignore_watch"      : ["[\\/\\\\]\\./", "node_modules"],
+  "merge_logs"       : true,
+  "exec_interpreter" : "node",
+  "exec_mode"        : "fork",
+  "autorestart"      : false,
+  "vizion"           : false,
+  "env": {
+    "NODE_ENV": "production",
+    "AWESOME_SERVICE_API_TOKEN": ""
+  }
+}
