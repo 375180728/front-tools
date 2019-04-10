@@ -15,11 +15,7 @@ export class Blog extends Component {
   constructor(props){
     super(props);
     this.get_blog = this.get_blog.bind(this);
-    this.state = {
-      title: '',
-      body: '',
-      date: ''
-    };
+    this.state = {data: []};
   }
 
   componentDidMount(){
@@ -27,11 +23,9 @@ export class Blog extends Component {
   }
 
   get_blog(){
-    this.props.$$GET_BLOG.get_blog((res) => this.setState({
-      title: res.title,
-      body: res.body,
-      date: res.date
-    }));
+    this.props.$$GET_BLOG.get_blog((res) => {
+      this.setState({data: res.data});
+    });
   }
 
   componentWillReceiveProps(nextProps){

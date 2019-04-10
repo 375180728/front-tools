@@ -22,15 +22,23 @@ const BlogSchema = new mongoose.Schema(
 );
 
 BlogSchema.static('get_blog', async (req, res, next) => {
-  res.result = [];
-  fetch('https://api.github.com/repos/375180728/myBlog/issues?creator=375180728&labels=blog')
+  res.result = {data: []};
+  await fetch('https://api.github.com/repos/375180728/front-tools/issues?creator=375180728&labels=blog')
     .then(res => res.json())
     .then(json => {
-      for(var i = 0; i < json.length; i++){
-        res.result.push(json[i]);
-      }
-      console.log(res.result)
+      let blogDB = new blogModel(json);
+      console.log(blogDB);
+      res.result.data = json;
+      json.map((item, index)=>{
+        blogDB.title = item.title;
+        blogDB.body = item.body;
+        blogDB.number = index;
+        blogDB.create_date = new Date();
+        console.log(blogDB);  
+      })
     })
+
+  // res.result = {data: [1,2,3]};
   // const user = req.body;
   // let errors = checkService.userRegister(user);
   // if (errors.length > 0) {
@@ -47,7 +55,6 @@ BlogSchema.static('get_blog', async (req, res, next) => {
   //   throw new ERROR.BusinessError(['用户名已存在']);
   // }
   // // 保存用户
-  // result = await wrapExec(res)(() => userDB.save());
   // res.result = RES.SUCCESS(null, ['创建用户成功']);
   // next();
   

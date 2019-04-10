@@ -34,14 +34,17 @@ UserSchema.static('register', async (req, res, next) => {
   userDB.password = crypto.AES.encrypt(user.password + userDB.slat, SECRET_KEY).toString();
   userDB.create_date = new Date();
   userDB.create_ip = _.chain(req.connection.remoteAddress).split(':').last().value();
+  console.log(userDB);
   let result = await wrapExec(res)(() => userModel.findOne({ username: user.username }).exec());
   if (result) {
     throw new ERROR.BusinessError(['用户名已存在']);
   }
   // 保存用户
   result = await wrapExec(res)(() => userDB.save());
+  console.log(res);
   // console.log(result);
   res.result = RES.SUCCESS(null, ['创建用户成功']);
+  // console.log(res.result);
   next();
 });
 
