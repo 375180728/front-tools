@@ -6,6 +6,8 @@
   "scripts": {
     "dev-pc": "cross-env webpack-dev-server --mode development --config webpack.dev-pc.js",
     "dev-mobile": "cross-env webpack-dev-server --mode development --config webpack.dev-mobile.js",
+    "start": "pm2 start ./server/deploy.json",
+    "stop": "pm2 stop ./server/deploy.json",
     "build": "cross-env npm run clean && npm run build-pc && npm run build-mobile",
     "build-pc": "webpack --mode production --config webpack.production-pc.js",
     "build-mobile": "webpack --mode production --config webpack.production-mobile.js",
