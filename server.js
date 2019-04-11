@@ -6,12 +6,10 @@ const express = require('express');
 var compression = require('compression')
 const _ = require('lodash');
 const { scheduleBackupDB } = require('./server/jobs/backupDB')
-var minimist = require('minimist');
-var args = minimist(process.argv.slice(2));
 
 const app = new express();
 app.use(compression());
-const port = 3001;
+const port = 3333;
 
 Reset = '\x1b[0m';
 FgRed = '\x1b[31m';
@@ -98,10 +96,9 @@ app.use(function(err, req, res, next) {
 });
 
 // 定时任务备份数据库
-if(args.mode == 'production'){
+if(process.env.NODE_ENV == 'production'){
   scheduleBackupDB();
 }
-
 var server = http.createServer(app);
 
 server.listen(port, function() {
