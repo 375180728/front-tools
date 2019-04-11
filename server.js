@@ -9,7 +9,7 @@ const { scheduleBackupDB } = require('./server/jobs/backupDB')
 
 const app = new express();
 app.use(compression());
-const port = 3333;
+const port = 3003;
 
 Reset = '\x1b[0m';
 FgRed = '\x1b[31m';
