@@ -1,6 +1,6 @@
 {
   "name"             : "front-tools",
-  "cwd"              : "/web/www/front-tools",
+  "cwd"              : "/www/front-tools",
   "script"           : "server.js",
   "log_date_format"  : "YYYY-MM-DD HH:mm Z",
   "error_file"       : "/web/logs/front-tools/error_pm2.log",

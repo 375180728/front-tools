@@ -1,0 +1,15 @@
+-----------2019-04-12 14:22:52-----------
+message:
+dbuser is not defined
+stack:
+ReferenceError: dbuser is not defined
+    at AuthSchema.static (/www/front-tools/server/models/auth.js:30:15)
+request path:/api/auth/login
+request method:POST
+request body:
+{
+  "username": "12345",
+  "password": "12345"
+}
+-----------END-----------
+
