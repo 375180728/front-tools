@@ -27,6 +27,7 @@ AuthSchema.static('login', async (req, res, next) => {
   }
   // 查询用户
   let dbUser = await wrapExec(res)(() => userModel.findOne({ username: reqUser.username }).exec());
+  console.log(dbuser);
   if (!dbUser) {
     throw new ERROR.BusinessError(['用户名密码不正确']);
   }
@@ -53,6 +54,7 @@ AuthSchema.static('login', async (req, res, next) => {
     token: token,
     role: dbUser.role
   });
+  console.log(res.result);
   next();
 });
 

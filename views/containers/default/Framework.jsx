@@ -10,7 +10,12 @@ class Framework extends Component {
 
   // 框架进入 
   componentDidMount() {
-    
+    if (!_.includes(window.location.href, '#/auth/login') && !_.includes(window.location.href, '#/auth/register')) {
+      if (!window.AUTH_TOKEN) {
+        window.location.href = '#/auth/login';
+        return;
+      }
+    }
   }
 
   render() {
