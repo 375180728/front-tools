@@ -113,8 +113,9 @@ class Models extends React.PureComponent {
       );
       children[Math.floor(i / 3)].push(child);
     });
-    children = children.map((item, i) => <ul key={i} className="page1-box-wrapper">{item}</ul>);
-    return <div>{children}</div>;
+    children = children.map((item, i) => item);
+    console.log(children);
+    return <div><ul className="page1-box-wrapper">{children}</ul></div>;
   }
 }
 

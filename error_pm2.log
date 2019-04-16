@@ -117,3 +117,13 @@
 2019-04-12 00:13 +08:00:     at Function.Module.runMain (internal/modules/cjs/loader.js:741:12)
 2019-04-12 00:13 +08:00:     at startup (internal/bootstrap/node.js:285:19)
 2019-04-12 00:13 +08:00:     at bootstrapNodeJSCore (internal/bootstrap/node.js:739:3)
+2019-04-13 14:53 +08:00: internal/modules/cjs/loader.js:582
+2019-04-13 14:53 +08:00:     throw err;
+2019-04-13 14:53 +08:00:     ^
+2019-04-13 14:53 +08:00: 
+2019-04-13 14:53 +08:00: Error: Cannot find module 'D:\Redrock\Project\xt-school\xt-school\node_modules\_pm2@3.5.0@pm2\lib\ProcessContainerFork.js'
+2019-04-13 14:53 +08:00:     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:580:15)
+2019-04-13 14:53 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:506:25)
+2019-04-13 14:53 +08:00:     at Function.Module.runMain (internal/modules/cjs/loader.js:741:12)
+2019-04-13 14:53 +08:00:     at startup (internal/bootstrap/node.js:285:19)
+2019-04-13 14:53 +08:00:     at bootstrapNodeJSCore (internal/bootstrap/node.js:739:3)

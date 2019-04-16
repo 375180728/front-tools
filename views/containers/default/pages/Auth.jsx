@@ -91,6 +91,7 @@ class LoginForm extends Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
+    console.log(this.props)
     const username = $.getCookie('username') || '';
     const password = $.getCookie('password') || '';
     return (
@@ -150,6 +151,7 @@ class RigisterForm extends Component {
   }
 
   render() {
+    console.log(this.props);
     const { getFieldDecorator } = this.props.form;
     return (
       <Form onKeyDown={this.handleKeyDown} onSubmit={() => this.validate()} className="auth-form">
