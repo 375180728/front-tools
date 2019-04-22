@@ -33,6 +33,18 @@
       display: flex;
       justify-content: left;
       flex-wrap: wrap;
+      .ant-card-cover img{
+        width: 273px;
+        height: 174px;
+      }
+      .ant-card-body {
+        height: 100px;
+        .ant-card-meta-title,
+        .ant-card-meta-description{
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
     }
   }
 }

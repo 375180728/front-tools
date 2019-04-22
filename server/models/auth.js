@@ -41,7 +41,7 @@ AuthSchema.static('login', async (req, res, next) => {
   const token = crypto.MD5(new Date().getTime().toString() + Math.random()).toString();
   const authDB = {
     user_id: dbUser._id,
-    token: token,
+    token: token, 
     create_date: new Date(),
     update_date: new Date(),
     login_ip: _.chain(req.connection.remoteAddress).split(':').last().value()

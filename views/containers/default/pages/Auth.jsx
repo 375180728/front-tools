@@ -91,7 +91,7 @@ class LoginForm extends Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    console.log(this.props)
+    // console.log(this.props.form);
     const username = $.getCookie('username') || '';
     const password = $.getCookie('password') || '';
     return (
@@ -151,7 +151,6 @@ class RigisterForm extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { getFieldDecorator } = this.props.form;
     return (
       <Form onKeyDown={this.handleKeyDown} onSubmit={() => this.validate()} className="auth-form">
@@ -161,17 +160,17 @@ class RigisterForm extends Component {
         </h2>
         <div className="desc">FE Assist 致力于协助前端工程师更高效的完成工作</div>
         <Form.Item className="input">
-          {getFieldDecorator('username', { rules: [{ required: true, message: '请填写用户名' }], initialValue: 'admin' })(
+          {getFieldDecorator('username', { rules: [{ required: true, message: '请填写用户名' }], initialValue: '' })(
             <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="用户名" />
           )}
         </Form.Item>
         <Form.Item className="input">
-          {getFieldDecorator('password', { rules: [{ required: true, message: '请填写密码' }], initialValue: 'admin' })(
+          {getFieldDecorator('password', { rules: [{ required: true, message: '请填写密码' }], initialValue: '' })(
             <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="密码" />
           )}
         </Form.Item>
         <Form.Item className="input">
-          {getFieldDecorator('email', { rules: [{ required: true, message: '请填写电子邮箱' }], initialValue: 'admin@admin.c' })(
+          {getFieldDecorator('email', { rules: [{ required: true, message: '请填写电子邮箱' }], initialValue: '' })(
             <Input prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />} type="email" placeholder="电子邮箱" />
           )}
         </Form.Item>
