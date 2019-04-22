@@ -6,7 +6,7 @@ import Icon from 'antd/lib/icon';
 
 const docList = [
   {title: '如何写出优雅的代码', uri: '#/docs/pretty-code', desc:'如何写出易于理解，维护，并且结构良好的代码', img: DOMAIN + 'docs/pretty-code.jpg', height: '22810px'},
-  {title: '读redux源码笔记', uri: '#/docs/redux-source', desc:'redux源码解读', img: DOMAIN + 'docs/redux-source.jpg', height: '6500px'}
+  {title: '读redux源码笔记', uri: '#/docs/redux-source', desc:'redux源码解读', img: DOMAIN + 'docs/redux-source.jpg', height: '7550px'}
 ]
 
 
@@ -33,7 +33,6 @@ export class Blog extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className='docs-containers'>
         <header><a href='#/'>FE Assist - Training Docs</a></header>
@@ -65,7 +64,7 @@ class DocList extends Component {
   render() {
     return (
       <div className="contents">
-        <h2>教程，文档，WIKI</h2>
+        <h2>教程，文档，博客</h2>
         <div className="title-line-wrapper page1-line">
           <div className="title-line" />
         </div>

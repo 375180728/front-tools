@@ -41,10 +41,7 @@ UserSchema.static('register', async (req, res, next) => {
   }
   // 保存用户
   result = await wrapExec(res)(() => userDB.save());
-  console.log(res);
-  // console.log(result);
   res.result = RES.SUCCESS(null, ['创建用户成功']);
-  // console.log(res.result);
   next();
 });
 
