@@ -11,7 +11,7 @@ export function register(request, callback) {
     success: [
       {
         action: ({ msg }) => window.UI.message.success(msg),
-        params: {msg: '注册账号成功，请通知管理员激活账号!',},
+        params: {msg: '注册账号成功!',},
         type: 'function'
       }
     ]

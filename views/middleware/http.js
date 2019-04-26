@@ -29,7 +29,7 @@ function request({ url, method, data }, successCallback, errorCallback) {
     .then(response => response.json())
     .then(successCallback)
     .catch(errorCallback);
-}
+} 
 
 // 生成请求 KEY
 function uniqueFetch(url, method, data) {

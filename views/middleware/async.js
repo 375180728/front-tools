@@ -8,5 +8,4 @@ export default store => next => action => {
         return next(action);
     }
     window.setTimeout(() => next(action), action.delayAction * 1000)
-
 }

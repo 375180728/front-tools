@@ -5,7 +5,7 @@ const { PLATFORMS } = require('../config');
 const GITLAB_DOMAIN = 'https://gitlab-dev.outwitinc.com/api/v3/';
 // GIT 项目匹配
 const PROJECT_MAPPING = [
-  { platformId: PLATFORMS.XY, projectId: 313, prefix: 'xy'}, //255 为真实杏耀
+  { platformId: PLATFORMS.XY, projectId: 313, prefix: 'xy'},
   { platformId: PLATFORMS.XC, projectId: 169, prefix: 'xc'},
   { platformId: PLATFORMS.HY, projectId: 290, prefix: 'hy'},
   { platformId: PLATFORMS.HC, projectId: 309, prefix: 'hc'}

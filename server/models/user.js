@@ -15,7 +15,7 @@ const UserSchema = new mongoose.Schema(
     email: { type: String, required: true },
     salt: { type: String, require: true },
     role: { type: Number, required: true, default: ROLES.FRONT_END },
-    status: {type: Number, required: true, default: USER_STATUS.INACTIVATED},
+    status: {type: Number, required: true, default: USER_STATUS.ACTIVATED},
     create_ip: { type: String, required: true },
     create_date: { type: Date }
   },
@@ -29,12 +29,11 @@ UserSchema.static('register', async (req, res, next) => {
     throw new ERROR.verifiyError(errors);
   }
   let userDB = new userModel(user);
-  userDB.status = USER_STATUS.INACTIVATED;
+  userDB.status = USER_STATUS.ACTIVATED;
   userDB.salt = crypto.MD5(new Date().getTime().toString()).toString();
-  userDB.password = crypto.AES.encrypt(user.password + userDB.slat, SECRET_KEY).toString();
+  userDB.password = crypto.AES.encrypt(user.password + userDB.salt, SECRET_KEY).toString();
   userDB.create_date = new Date();
   userDB.create_ip = _.chain(req.connection.remoteAddress).split(':').last().value();
-  console.log(userDB);
   let result = await wrapExec(res)(() => userModel.findOne({ username: user.username }).exec());
   if (result) {
     throw new ERROR.BusinessError(['用户名已存在']);

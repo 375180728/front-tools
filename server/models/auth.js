@@ -34,7 +34,7 @@ AuthSchema.static('login', async (req, res, next) => {
     throw new ERROR.BusinessError(['账号未激活，请联系管理员激活账号']);
   }
   const password = crypto.AES.decrypt(dbUser.password, SECRET_KEY).toString(crypto.enc.Utf8);
-  if (password !== reqUser.password + dbUser.slat) {
+  if (password !== reqUser.password + dbUser.salt) {
     throw new ERROR.BusinessError(['用户名密码不正确']);
   }
   // 保存登录信息
