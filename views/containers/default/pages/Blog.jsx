@@ -6,7 +6,8 @@ import Icon from 'antd/lib/icon';
 
 const docList = [
   {title: '如何写出优雅的代码', uri: '#/docs/pretty-code', desc:'如何写出易于理解，维护，并且结构良好的代码', img: DOMAIN + 'docs/pretty-code.jpg', height: '22810px'},
-  {title: '读redux源码笔记', uri: '#/docs/redux-source', desc:'redux源码解读', img: DOMAIN + 'docs/redux-source.jpg', height: '7550px'}
+  {title: '读redux源码笔记', uri: '#/docs/redux-source', desc:'redux源码解读', img: DOMAIN + 'docs/redux-source.jpg', height: '7550px'},
+  {title: 'webpack入门', uri: '#/docs/webpack', desc:'webpack入门', img: DOMAIN + 'docs/webpack.png', height: '1000px'}
 ]
 
 

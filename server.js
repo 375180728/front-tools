@@ -47,7 +47,6 @@ app.use(function(req, res, next) {
 // 文档
 app.use('/docs', express.static(__dirname+'/docs'))
 app.get("/docs/:dir", function(req, res) {
-  console.log(req.params.dir);
   res.sendFile(__dirname + `/docs/${req.params.dir}/index.html`)
 })
 

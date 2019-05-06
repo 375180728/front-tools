@@ -39,7 +39,14 @@ class Models extends React.PureComponent {
     });
   }
 
+  onMouseOut(i) {
+    this.setState({
+      hoverNum: i + 3
+    });
+  }
+
   getEnter(e) {
+    // console.log(1)
     const i = e.index;
     const r = Math.random() * 2 - 1;
     const y = Math.random() * 10 + 5;
@@ -47,7 +54,7 @@ class Models extends React.PureComponent {
     return [
       {
         delay,
-        opacity: 0.4,
+        opacity: 0.5,
         ...pointPos[e.index],
         ease: 'easeOutBack',
         duration: 300
@@ -61,11 +68,23 @@ class Models extends React.PureComponent {
     ];
   }
 
+  getLeave(e) {
+    // console.log(2)
+    return {
+        x: 0,
+        y: 0,
+        opacity: 0,
+        duration: 300,
+        ease: 'easeInBack'
+      }
+  }
+
   render() {
     const { hoverNum } = this.state;
-    let children = [[], [], []];
+    let children = [];
     featuresCN.forEach((item, i) => {
       const isHover = hoverNum === i;
+      console.log(isHover)
       const pointChild = ['point-0 left', 'point-0 right', 'point-ring', 'point-1', 'point-2', 'point-3'].map(className => (
         <TweenOne
           component="i"
@@ -84,17 +103,14 @@ class Models extends React.PureComponent {
             onMouseEnter={() => {
               this.onMouseOver(i);
             }}
+            onMouseLeave={() => {
+              this.onMouseOut(i);
+            }}
           >
             <TweenOneGroup
               className="page1-point-wrapper"
               enter={this.getEnter}
-              leave={{
-                x: 0,
-                y: 30,
-                opacity: 0,
-                duration: 300,
-                ease: 'easeInBack'
-              }}
+              leave={this.getLeave}
             >
               {isHover && pointChild}
             </TweenOneGroup>
@@ -111,7 +127,7 @@ class Models extends React.PureComponent {
           </div>
         </li>
       );
-      children[Math.floor(i / 3)].push(child);
+      children.push(child);
     });
     children = children.map((item, i) => item);
     return <div><ul className="page1-box-wrapper">{children}</ul></div>;
