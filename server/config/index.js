@@ -1,6 +1,3 @@
-var minimist = require('minimist');
-var args = minimist(process.argv.slice(2));
-
 // 用户密码加密私钥
 module.exports.SECRET_KEY = 'U2FsdGVkX19h37oAKw/0/DsxRFH/8E/wG2ZHK/VeE8wkbncmIjm2aWvQzE106Xp7';
 
@@ -13,7 +10,7 @@ module.exports.DATABASE = {
 }
 
 // 服务器日志路径
-module.exports.LOG_PATH = args.mode == 'production' ? '/www/logs/front-tools' : 'C:\\logs\\front-tools';
+module.exports.LOG_PATH = process.env.NODE_ENV == 'production' ? '/www/logs/front-tools' : 'C:\\logs\\front-tools';
 
 // token过期时间
 module.exports.TOKEN_EXPIRED_TIME = 3600;

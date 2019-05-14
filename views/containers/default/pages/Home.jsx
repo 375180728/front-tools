@@ -84,7 +84,6 @@ class Models extends React.PureComponent {
     let children = [];
     featuresCN.forEach((item, i) => {
       const isHover = hoverNum === i;
-      console.log(isHover)
       const pointChild = ['point-0 left', 'point-0 right', 'point-ring', 'point-1', 'point-2', 'point-3'].map(className => (
         <TweenOne
           component="i"
